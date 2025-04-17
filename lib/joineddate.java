@@ -5,6 +5,8 @@
  */
 package uts_makepal.lib;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author tsaqi
@@ -37,4 +39,14 @@ public class joineddate {
         return monthWorkingInYear;
     }
     
+    public int monthWorkingInYear() {
+        LocalDate date = LocalDate.now();
+		
+	if (date.getYear() == yearJoined) {
+            monthWorkingInYear = date.getMonthValue() - monthJoined;
+        }else {
+            monthWorkingInYear = 12;
+        }
+        return monthWorkingInYear;
+    }
 }
